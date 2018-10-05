@@ -15,19 +15,8 @@
                         <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$permission->name) }}" required autofocus>
                     </div>
                 </div>
-                <div class='form-group'>
-                    @if(!$roles->isEmpty())
-                     <h5><b>Assign Permission to Roles</b></h5>
-                    @foreach ($roles as $role)
-                        <input class="form-check-input" type="checkbox" id="roles" name="roles[]" value="{{$role->id}}"
-                        @if(in_array($role->id, $permission->roles()->pluck('id')->toarray())) checked @endif>
-                        <label class="form-check-label" for="roles">{{ucfirst($role->name)}}</label>
-                        <br>
-                    @endforeach
-                    @endif
-                    
-                </div>
-            <button type="submit" class="btn btn-primary">Add</button>
+
+            <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
 </main>

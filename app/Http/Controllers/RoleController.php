@@ -111,8 +111,6 @@ class RoleController extends Controller
         $input = $request->except(['permissions']);
         $permissions  = $request['permissions'];
 
-      
- 
 
         $role->fill($input)->save();
 
