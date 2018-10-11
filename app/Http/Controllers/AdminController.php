@@ -150,7 +150,7 @@ class AdminController extends Controller
         $data = User::find($id);
         
       //dd($data);
-      //$data->delete();
+      $data->delete();
 
       return back()->with('success','Item with id ' . $id .' deleted successfully!'); 
     }

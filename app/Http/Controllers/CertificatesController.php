@@ -115,7 +115,7 @@ class CertificatesController extends Controller
       $data = Data::find($id);
 
       //dd($data);
-      //$data->delete();
+      $data->delete();
 
       return back()->with('success','Certificate with id ' . $id .' deleted successfully!');
 
