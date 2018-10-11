@@ -120,7 +120,7 @@ $(document).ready(function() {
         var name = $(this).data('name');
         e.preventDefault();
         swal({
-            title: 'Are you sure you want to delete user '+name+ '?',
+            title: 'Are you sure you want to delete '+name+ '?',
             text: "You won't be able to revert this!",
             type: 'error',
             showCancelButton: true,
