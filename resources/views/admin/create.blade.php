@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<main role="main" class="col-sm-9 ml-sm-auto col-lg-10 mt-5">
+<main class="col-sm-9 ml-sm-auto col-lg-10 mt-5 pt-3">
 	<h1>Add new user</h1>
         @if ($errors->any())
             <div class="alert alert-danger">

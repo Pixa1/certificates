@@ -2,7 +2,7 @@
 
 @section('content')
 @include('script')
-<main role="main" class="col-sm-11 ml-sm-auto col-lg-11 pt-5 px-4">
+<main class="col-sm-11 ml-sm-auto col-lg-11 mt-5 pt-3">
 	
     @include('flash-message')
 	

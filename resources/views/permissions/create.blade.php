@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<main role="main" class="col-sm-9 ml-sm-auto col-lg-10 pt-5 px-4">
+<main class="col-sm-9 ml-sm-auto col-lg-10 mt-5 pt-3">
 
 	<div class='col-lg-4 col-lg-offset-4'>
 
