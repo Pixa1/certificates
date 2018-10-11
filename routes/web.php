@@ -40,6 +40,8 @@ Route::resource('permissions','PermissionController');
 Route::resource('roles','RoleController');
 
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -3,7 +3,7 @@
 @section('content')
 @include('script')
 
-<main role="main" class="col-sm-11 ml-sm-auto col-lg-11 pt-5 px-4">
+<main class="col-sm-11 ml-sm-auto col-lg-11 mt-5 pt-3">
 	@include('flash-message')
     <h1><i class="fa fa-users"></i> User Administration <a href="{{ route('roles.index') }}" class="btn btn-light float-right">Roles</a>
     <a href="{{ route('permissions.index') }}" class="btn btn-light float-right">Permissions</a></h1>
@@ -31,7 +31,7 @@
 	        <td>
 	            <div class="btn-group btn-group-sm border-1">
 	                <a href="{!!route('admin.edit', $user->id) !!}" class="btn btn-info"><i class="far fa-edit"></i> Edit</a>
-	                 <form method="POST" action="{!! route('admin.destroy', $user->id) !!}">
+	                 <form id="delete" method="POST" action="{!! route('admin.destroy', $user->id) !!}">
 					    @csrf
 					    @method('DELETE')
 					    <button class="btn btn-sm btn-danger" data-id="{{$user->id}}" type="submit"><i class="fas fa-trash-alt"></i> Delete</button>
@@ -43,7 +43,8 @@
 	    @endforeach
 
 	</table>
-
+		<h5>Create new user</h5>
+		<a href="{!!route('admin.create')!!}" class="btn btn-info"> Create new</a>
 </main>
 </div>
 </div>

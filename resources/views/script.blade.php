@@ -4,7 +4,14 @@ $(document).ready(function() {
 
 	//Initialize Datatable
 	$('#select_btn').prop('disabled',true);
-	$('#table').DataTable();
+	$('#table').DataTable({
+        "columnDefs": [
+            {
+                "targets": [ 0 ],
+                "visible": false,
+                "searchable": false
+            }]
+    });
     $('#table tbody').on( 'click', 'tr', function () {
 	    $(this).toggleClass('table-info');
 	    //disable download button if nothing is selected
@@ -106,5 +113,30 @@ $(document).ready(function() {
     setTimeout(function() {
     $('.alert').fadeOut('400');
     }, 3000);
+
+    // Delete
+    $('#table tbody').on('click','.btn-danger',function (e) {
+       e.preventDefault();
+       var t = table.row($(this).parents('tr')).data()[0];
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.value) {
+                $('#delete').attr('action',"'CertificatesController@destroy', t")
+                swal(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+       alert(table.row($(this).parents('tr')).data()[0]);
+    });
 } );
 </script>
