@@ -43,7 +43,7 @@
 	    @endforeach
 
 	</table>
-
+	<a href="{{ route('admin.create') }}" class="btn btn-info">Create new user</a></h1>
 </main>
 </div>
 </div>
