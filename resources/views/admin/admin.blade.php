@@ -5,6 +5,7 @@
 
 <main class="col-sm-11 ml-sm-auto col-lg-11 mt-5 pt-3">
 	@include('flash-message')
+	
     <h1><i class="fa fa-users"></i> User Administration <a href="{{ route('roles.index') }}" class="btn btn-light float-right">Roles</a>
     <a href="{{ route('permissions.index') }}" class="btn btn-light float-right">Permissions</a></h1>
     <hr>

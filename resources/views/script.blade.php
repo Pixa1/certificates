@@ -114,29 +114,28 @@ $(document).ready(function() {
     $('.alert').fadeOut('400');
     }, 3000);
 
-    // Delete
-    $('#table tbody').on('click','.btn-danger',function (e) {
-       e.preventDefault();
-       var t = table.row($(this).parents('tr')).data()[0];
+
+    //delete
+    $('.btn-danger').on('click', function(e){
+        var name = $(this).data('id');
+        e.preventDefault();
         swal({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
-            type: 'warning',
+            type: 'error',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.value) {
-                $('#delete').attr('action',"'CertificatesController@destroy', t")
-                swal(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
         })
-       alert(table.row($(this).parents('tr')).data()[0]);
+        .then ((result) => {
+            if (result.value) {
+                $(this).closest("form").submit();
+            }else{
+                result.dismiss === swal.DismissReason.cancel
+            }
+
+        });
     });
 } );
 </script>

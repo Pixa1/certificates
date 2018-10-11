@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 
+
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Hash;
@@ -147,10 +148,10 @@ class AdminController extends Controller
     {
         //
         $data = User::find($id);
-
+        
       //dd($data);
-      $data->delete();
+      //$data->delete();
 
-      return back()->with('success','Item with id ' . $id .' deleted successfully!');
+      return back()->with('success','Item with id ' . $id .' deleted successfully!'); 
     }
 }
