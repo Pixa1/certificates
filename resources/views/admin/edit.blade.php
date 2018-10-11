@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<main role="main" class="col-sm-9 ml-sm-auto col-lg-10 pt-5 px-4">
+<main role="main" class="col-sm-9 ml-sm-auto col-lg-10 mt-5 pt-3">
 	<h1>Edit User</h1>
         
 		<form enctype="multipart/form-data" id="form" method="post" action="{{route('admin.update', $user->id)}}">

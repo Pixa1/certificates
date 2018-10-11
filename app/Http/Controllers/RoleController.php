@@ -43,7 +43,7 @@ class RoleController extends Controller
     {
         //
         $this->validate($request, [
-            'name'=>'required|unique:roles|max:10',
+            'name'=>'required|unique:roles|max:20',
             'permissions' =>'required',
             ]
         );

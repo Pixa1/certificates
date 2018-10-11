@@ -10,7 +10,7 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">{{ __('Name') }}</label>
+                    <label for="name" class="col-sm-1 col-form-label">{{ __('Name') }}</label>
                     <div class="col-sm-8 col-lg-7">
                         <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$permission->name) }}" required autofocus>
                     </div>
