@@ -47,7 +47,7 @@
 	                <a href="{!!'/edit/'. $item->id !!}" class="btn btn-info"><i class="far fa-edit"></i> Edit</a>
 	                 <form method="POST" action="{!! action('CertificatesController@destroy', $item->id) !!}">
 					    @csrf
-					    <button class="btn btn-sm btn-danger" id="delete_btn" data-id="{{$item->id}}" type="submit" ><i class="fas fa-trash-alt"></i> Delete</button>
+					    <button class="btn btn-sm btn-danger" id="delete_btn" data-name="{{$item->certname}}" type="submit" ><i class="fas fa-trash-alt"></i> Delete</button>
 					</form>
 	            </div>
 	        </td>

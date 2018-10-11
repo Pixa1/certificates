@@ -117,10 +117,10 @@ $(document).ready(function() {
 
     //delete
     $('.btn-danger').on('click', function(e){
-        var name = $(this).data('id');
+        var name = $(this).data('name');
         e.preventDefault();
         swal({
-            title: 'Are you sure?',
+            title: 'Are you sure you want to delete user '+name+ '?',
             text: "You won't be able to revert this!",
             type: 'error',
             showCancelButton: true,
