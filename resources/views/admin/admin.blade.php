@@ -43,8 +43,12 @@
 	    @endforeach
 
 	</table>
+<<<<<<< HEAD
 		<h5>Create new user</h5>
 		<a href="{!!route('admin.create')!!}" class="btn btn-info"> Create new</a>
+=======
+	<a href="{{ route('admin.create') }}" class="btn btn-info">Create new user</a></h1>
+>>>>>>> 319b1119adf1df40118a6ff3fb3ec6128a530bc7
 </main>
 </div>
 </div>
