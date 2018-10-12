@@ -4,14 +4,7 @@ $(document).ready(function() {
 
 	//Initialize Datatable
 	$('#select_btn').prop('disabled',true);
-	$('#table').DataTable({
-        "columnDefs": [
-            {
-                "targets": [ 0 ],
-                "visible": false,
-                "searchable": false
-            }]
-    });
+	$('#table').DataTable();
     $('#table tbody').on( 'click', 'tr', function () {
 	    $(this).toggleClass('table-info');
 	    //disable download button if nothing is selected

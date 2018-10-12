@@ -5,10 +5,10 @@
 <main class="col-sm-11 ml-sm-auto col-lg-11 mt-5 pt-5">
 	@include('flash-message')
 	<div class="table-responsive p-1">
-	<table id="table" class="table table-bordered table-sm" cellspacing="0" width="100%">
+	<table id="table" class="table table-bordered table-sm table-striped" cellspacing="0" width="100%">
 	    <thead class="thead-light">
 	        <tr>
-				<th>Id</th>
+				{{-- <th>Id</th> --}}
 	            <th>First name</th>
 	            <th>Last name</th>
 	            <th>Vendor</th>
@@ -25,7 +25,7 @@
 	    </thead>
 	    @foreach($data as $item)
 	    <tr>
-	        <td>{{$item->id}}</td>
+	        {{-- <td>{{$item->id}}</td> --}}
 	        <td>{{$item->name}}</td>
 	        <td>{{$item->lastname}}</td>
 	        <td>{{$item->vendor}}</td>
@@ -56,7 +56,7 @@
 	    @endforeach
 	    <tfoot>
 	    <tr>
-			<th>Id</th>
+			{{-- <th>Id</th> --}}
 	        <th>First name</th>
 	        <th>Last name</th>
 	        <th>Vendor</th>

@@ -22,7 +22,7 @@ class CreateCertifikatiTable extends Migration
             $table->text('certname');
             $table->text('certver');
             $table->text('certpath');
-            $table->text('examid');
+            $table->text('examid')->nullable();
             $table->text('dateofach');
             $table->text('datevalid');
             $table->integer('deprecated')->default('0');
