@@ -109,7 +109,7 @@ $(document).ready(function() {
 
 
     //delete
-    $('.btn-danger').on('click', function(e){
+    $('#table').on('click','.btn-danger', function(e){
         var name = $(this).data('name');
         e.preventDefault();
         swal({
