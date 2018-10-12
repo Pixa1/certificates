@@ -17,9 +17,6 @@
 
 Route::get('/','PagesController@index');
 
-
-
-
 Route::get('/create','CertificatesController@create');
 Route::post('/create','CertificatesController@store');
 
@@ -38,8 +35,6 @@ Route::post('/delete/{id}','CertificatesController@destroy');
 Route::resource('admin','AdminController');
 Route::resource('permissions','PermissionController');
 Route::resource('roles','RoleController');
-
-
 
 
 Auth::routes();
