@@ -13,10 +13,8 @@ class CertificatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function __construct() {
+        $this->middleware(['auth','isManager']); //isAdmin middleware lets only users with a //specific permission permission to access these resources
     }
 
     public function index()
