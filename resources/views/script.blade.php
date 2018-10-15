@@ -4,7 +4,8 @@ $(document).ready(function() {
 
 	//Initialize Datatable
 	$('#select_btn').prop('disabled',true);
-	$('#table').DataTable();
+    $.fn.dataTable.moment( 'DD-MM-YYYY' );
+	//$('#table').DataTable();
     $('#table tbody').on( 'click', 'tr', function () {
 	    $(this).toggleClass('table-info');
 	    //disable download button if nothing is selected
@@ -15,7 +16,25 @@ $(document).ready(function() {
 	    };
     } );
 
-	var table = $('#table').DataTable();
+	var table = $('#table').DataTable(
+/*         {
+            columnDefs: [
+            {
+                targets: 7, 
+                "render": function ( data, type, row ) {
+                    if (data[7] == null){
+                        return 'Date no set';
+                    }   else {
+                    return moment(data).format('LL'); 
+                    //return data;
+                    }             
+                    // return data +' ('+ row[3]+')';
+                    }
+                //render: $.fn.dataTable.render.moment( 'DD-MM-YYYY' ) 
+            }
+            ]
+        } */
+    );
     // Setup - add a text input to each footer cell
 
     $('#table tfoot th').each( function () {
