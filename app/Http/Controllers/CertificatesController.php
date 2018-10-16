@@ -90,19 +90,17 @@ class CertificatesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $name = $request->file('file')->getClientOriginalName();
-        $certpath = $request->file->storeAs('public',$name);
-        $path = '/storage/'.$name;
-
-        $request->request->add(['certpath' => $path]);
+        if( $request->has('file')){
+            $name = $request->file('file')->getClientOriginalName();
+            $certpath = $request->file->storeAs('public',$name);
+            $path = '/storage/'.$name;
+            $request->request->add(['certpath' => $path]);
+        }
 
         Data::where('id',$id)
         ->update (request(['name','lastname','vendor','shorttitle','certname','certver','examid','dateofach','datevalid','certpath','deprecated']));
-        
-        //Data::create(request(['name','lastname','vendor','shorttitle','certname','certver','examid','dateofach','datevalid','certpath','deprecated']));
 
-        return redirect('/')->with('success','Certificate updated successfully!');
+        return redirect('/')->with('success','Certificate updated successfully!'); 
     
 }
     /**
