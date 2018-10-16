@@ -26,7 +26,7 @@
 
                         <td>{{ $role->name }}</td>
 
-                        <td>{{ str_replace(array('[',']','"'),'', $role->permissions()->pluck('name')) }}</td>{{-- Retrieve array of permissions associated to a role and convert to string --}}
+                        <td>{{ str_replace(array('[',']','"'),'', $role->permissions()->pluck('name')->implode(', ')) }}</td>{{-- Retrieve array of permissions associated to a role and convert to string --}}
                         <td>
                             <div class="btn-group btn-group-sm border-1">
                                 <a href="{{ URL::to('roles/'.$role->id.'/edit') }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>

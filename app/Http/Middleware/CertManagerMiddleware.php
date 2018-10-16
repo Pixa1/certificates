@@ -19,7 +19,7 @@ class CertManagerMiddleware
     {
         if (Auth::user()->hasPermissionTo('Administer roles & permissions')){
             return $next($request);
-        } else if (!Auth::user()->hasPermissionTo('Certificate Manager'))
+        } else if (!Auth::user()->hasPermissionTo('Manage Certificates'))
          {
                 abort('401','Sorry you are not Authorized');
             } 

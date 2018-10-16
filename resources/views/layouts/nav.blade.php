@@ -1,5 +1,5 @@
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-1 col-md-1 col-lg-1 mr-0" href="#">S&T</a>
+      <a class="navbar-brand col-sm-1 col-md-1 col-lg-1 mr-0" href="/">S&T</a>
         <ul class="nav px-3"> 
             <!-- Authentication Links -->
             @guest
@@ -44,20 +44,23 @@
                   Certifikati <span class="sr-only">(current)</span>
                 </a>
               </li>
-              @auth
+              @if (Auth::check() && Auth::user()->hasPermissionto('Manage Certificates'))
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('/create') }}"">
+                <a class="nav-link" href="{{ url('/create') }}">
                   <span data-feather="file"></span>
                   Add new
                 </a>
               </li>
+              @endif
+              @if (Auth::check() && Auth::user()->hasPermissionto('Administer roles & permissions'))
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('/admin') }}"">
+                <a class="nav-link" href="{{ url('/admin') }}">
                   <span data-feather="settings"></span>
                   Admin
                 </a>
               </li>
-              @endauth
+              @endif
+              
             </ul>
 
           </div>

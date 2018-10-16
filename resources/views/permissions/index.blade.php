@@ -6,7 +6,7 @@
 	
     @include('flash-message')
 	
-    <h1><i class="fa fa-key"></i>Available Permissions
+    <h1><i class="fa fa-key"></i> Permissions
 
     <a href="{{ route('admin.index') }}" class="btn btn-light float-right">Users</a>
     <a href="{{ route('roles.index') }}" class="btn btn-light float-right">Roles</a></h1>
