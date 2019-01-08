@@ -7,8 +7,9 @@
         <div class="card-header">
         <i class="fa fa-align-justify"></i> @yield('title')
         </div>
+        <form enctype="multipart/form-data" id="form" method="post" action="{{action('CertificatesController@update', $id)}}">
         <div class="card-body">
-            <form enctype="multipart/form-data" id="form" method="post" action="{{action('CertificatesController@update', $id)}}">
+            
                     @csrf
                     <div class="form-group row">
                         <label for="first name" class="col-sm-3 col-form-label">{{ __('First Name') }}</label>
@@ -111,11 +112,12 @@
                 </fieldset>
 
                 
-            </form>
+            
         </div>
         <div class="card-footer">
                 <button type="submit" class="btn btn-primary"><i class="far fa-dot-circle"></i> Update</button>
         </div>
+    </form>
     </div>
 </div> 
 		

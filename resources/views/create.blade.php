@@ -6,8 +6,9 @@
         <div class="card-header">
             <i class="fa fa-align-justify"></i> @yield('title')
         </div>
+        <form enctype="multipart/form-data" id="form" method="post" action="/create">
         <div class="card-body">       
-            <form enctype="multipart/form-data" id="form" method="post" action="/create">
+            
                 @csrf
                 <div class="form-group row">
                     <label for="first name" class="col-sm-3 col-form-label">{{ __('First Name') }}</label>
@@ -89,19 +90,20 @@
 
                     </div>
                 </div>              
-                            
 
                 <fieldset class="form-group">
                     <label for="exampleInputFile">Select Certificate</label>
                     <input type="file" class="form-control-file" id="exampleInputFile" name="file" onchange="setfilename(this.value);" required>
                 </fieldset>
                 
-            </form>
+            
         </div>
         <div class="card-footer">
                 <button type="submit" class="btn btn-primary"><i class="far fa-dot-circle"></i> Submit</button>
         </div>
+    </form>
     </div>
+
 </div>
-</main>
+
 @endsection
