@@ -41,7 +41,7 @@
                     <label for="Short Title" class="col-sm-3 col-form-label">{{ __('Short Title') }}</label>
 
                     <div class="col-sm-6">
-                        <input id="shorttitle" type="text" class="form-control{{ $errors->has('shorttitle') ? ' is-invalid' : '' }}" name="shorttitle" value="{{ old('shorttitle') }}" required autofocus>
+                        <input id="shorttitle" type="text" class="form-control{{ $errors->has('shorttitle') ? ' is-invalid' : '' }}" name="shorttitle" value="{{ old('shorttitle') }}" autofocus>
 
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <label for="Certification" class="col-sm-3 col-form-label">{{ __('Certification') }}</label>
 
                     <div class="col-sm-6">
-                        <input id="certname" type="text" class="form-control{{ $errors->has('certname') ? ' is-invalid' : '' }}" name="certname" value="{{ old('certname') }}" required autofocus>
+                        <input id="certname" type="text" class="form-control{{ $errors->has('certname') ? ' is-invalid' : '' }}" name="certname" value="{{ old('certname') }}" autofocus>
 
                     </div>
                 </div>
