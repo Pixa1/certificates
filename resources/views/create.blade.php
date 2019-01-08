@@ -1,98 +1,107 @@
 @extends('layouts.master')
+@section('title', 'Dodaj novi certifikat')
 @section('content')
-<main  class="col-sm-9 ml-sm-auto col-lg-10 mt-5 pt-5">
-	<h1>Import new certificate</h1>
-        
-		<form enctype="multipart/form-data" id="form" method="post" action="/create">
-            @csrf
-			<div class="form-group row">
-                <label for="first name" class="col-sm-2 col-form-label">{{ __('First Name') }}</label>
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> @yield('title')
+        </div>
+        <div class="card-body">       
+            <form enctype="multipart/form-data" id="form" method="post" action="/create">
+                @csrf
+                <div class="form-group row">
+                    <label for="first name" class="col-sm-3 col-form-label">{{ __('First Name') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                    <div class="col-sm-6">
+                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
+                    </div>
                 </div>
-            </div>
 
-			<div class="form-group row">
-                <label for="last name" class="col-sm-2 col-form-label">{{ __('Last Name') }}</label>
+                <div class="form-group row">
+                    <label for="last name" class="col-sm-3 col-form-label">{{ __('Last Name') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required autofocus>
+                    <div class="col-sm-6">
+                        <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required autofocus>
 
+                    </div>
                 </div>
-            </div>
 
-			<div class="form-group row">
-                <label for="Vendor" class="col-sm-2 col-form-label">{{ __('Vendor') }}</label>
+                <div class="form-group row">
+                    <label for="Vendor" class="col-sm-3 col-form-label">{{ __('Vendor') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="vendor" type="text" class="form-control{{ $errors->has('vendor') ? ' is-invalid' : '' }}" name="vendor" value="{{ old('vendor') }}" required autofocus>
+                    <div class="col-sm-6">
+                        <input id="vendor" type="text" class="form-control{{ $errors->has('vendor') ? ' is-invalid' : '' }}" name="vendor" value="{{ old('vendor') }}" required autofocus>
 
+                    </div>
                 </div>
-            </div>
 
-			<div class="form-group row">
-                <label for="Short Title" class="col-sm-2 col-form-label">{{ __('Short Title') }}</label>
+                <div class="form-group row">
+                    <label for="Short Title" class="col-sm-3 col-form-label">{{ __('Short Title') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="shorttitle" type="text" class="form-control{{ $errors->has('shorttitle') ? ' is-invalid' : '' }}" name="shorttitle" value="{{ old('shorttitle') }}" required autofocus>
+                    <div class="col-sm-6">
+                        <input id="shorttitle" type="text" class="form-control{{ $errors->has('shorttitle') ? ' is-invalid' : '' }}" name="shorttitle" value="{{ old('shorttitle') }}" required autofocus>
 
+                    </div>
                 </div>
-            </div>
 
-			<div class="form-group row">
-                <label for="Certification" class="col-sm-2 col-form-label">{{ __('Certification') }}</label>
+                <div class="form-group row">
+                    <label for="Certification" class="col-sm-3 col-form-label">{{ __('Certification') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="certname" type="text" class="form-control{{ $errors->has('certname') ? ' is-invalid' : '' }}" name="certname" value="{{ old('certname') }}" required autofocus>
+                    <div class="col-sm-6">
+                        <input id="certname" type="text" class="form-control{{ $errors->has('certname') ? ' is-invalid' : '' }}" name="certname" value="{{ old('certname') }}" required autofocus>
 
+                    </div>
                 </div>
-            </div>
 
-			<div class="form-group row">
-                <label for="Certification/Version" class="col-sm-2 col-form-label">{{ __('Certification/Vesion') }}</label>
+                <div class="form-group row">
+                    <label for="Certification/Version" class="col-sm-3 col-form-label">{{ __('Certification/Version') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="certver" type="text" class="form-control{{ $errors->has('certver') ? ' is-invalid' : '' }}" name="certver" value="{{ old('certver') }}"  autofocus>
+                    <div class="col-sm-6">
+                        <input id="certver" type="text" class="form-control{{ $errors->has('certver') ? ' is-invalid' : '' }}" name="certver" value="{{ old('certver') }}"  autofocus>
 
-                </div>
-            </div>    
+                    </div>
+                </div>    
 
-			<div class="form-group row">
-                <label for="Exam ID" class="col-sm-2 col-form-label">{{ __('Exam ID') }}</label>
+                <div class="form-group row">
+                    <label for="Exam ID" class="col-sm-3 col-form-label">{{ __('Exam ID') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="examid" type="text" class="form-control{{ $errors->has('examid') ? ' is-invalid' : '' }}" name="examid" value="{{ old('examid') }}"  autofocus>
+                    <div class="col-sm-6">
+                        <input id="examid" type="text" class="form-control{{ $errors->has('examid') ? ' is-invalid' : '' }}" name="examid" value="{{ old('examid') }}"  autofocus>
 
-                </div>
-            </div> 
+                    </div>
+                </div> 
 
-			<div class="form-group row">
-                <label for="Achieved On" class="col-sm-2 col-form-label">{{ __('Achieved On') }}</label>
+                <div class="form-group row">
+                    <label for="Achieved On" class="col-sm-3 col-form-label">{{ __('Achieved On') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="dateofach" type="date" class="form-control{{ $errors->has('dateofach') ? ' is-invalid' : '' }}" name="dateofach" value="{{ old('dateofach') }}"  autofocus>
+                    <div class="col-sm-6">
+                        <input id="dateofach" type="date" class="form-control{{ $errors->has('dateofach') ? ' is-invalid' : '' }}" name="dateofach" value="{{ old('dateofach') }}"  autofocus>
 
-                </div>
-            </div>                                                                
+                    </div>
+                </div>                                                                
 
-			<div class="form-group row">
-                <label for="Expires On" class="col-sm-2 col-form-label">{{ __('Expires On') }}</label>
+                <div class="form-group row">
+                    <label for="Expires On" class="col-sm-3 col-form-label">{{ __('Expires On') }}</label>
 
-                <div class="col-sm-5">
-                    <input id="datevalid" type="date" class="form-control{{ $errors->has('datevalid') ? ' is-invalid' : '' }}" name="datevalid" value="{{ old('datevalid') }}"  autofocus>
+                    <div class="col-sm-6">
+                        <input id="datevalid" type="date" class="form-control{{ $errors->has('datevalid') ? ' is-invalid' : '' }}" name="datevalid" value="{{ old('datevalid') }}"  autofocus>
 
-                </div>
-            </div>              
-                          
+                    </div>
+                </div>              
+                            
 
-		<fieldset class="form-group">
-			<label for="exampleInputFile">Select Certificate</label>
-			<input type="file" class="form-control-file" id="exampleInputFile" name="file" onchange="setfilename(this.value);" required>
-		</fieldset>
-		
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
+                <fieldset class="form-group">
+                    <label for="exampleInputFile">Select Certificate</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" name="file" onchange="setfilename(this.value);" required>
+                </fieldset>
+                
+            </form>
+        </div>
+        <div class="card-footer">
+                <button type="submit" class="btn btn-primary"><i class="far fa-dot-circle"></i> Submit</button>
+        </div>
+    </div>
+</div>
 </main>
 @endsection

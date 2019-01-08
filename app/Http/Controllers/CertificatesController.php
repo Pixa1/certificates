@@ -14,7 +14,8 @@ class CertificatesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __construct() {
-        $this->middleware(['auth','isManager']); //isAdmin middleware lets only users with a //specific permission permission to access these resources
+        $this->middleware(['auth','isManager']); //isAdmin middleware lets only users with a 
+                                                 //specific permission permission to access these resources
     }
 
     public function index()
@@ -96,6 +97,7 @@ class CertificatesController extends Controller
             $path = '/storage/'.$name;
             $request->request->add(['certpath' => $path]);
         }
+        //dd($request->all());
 
         Data::where('id',$id)
         ->update (request(['name','lastname','vendor','shorttitle','certname','certver','examid','dateofach','datevalid','certpath','deprecated']));

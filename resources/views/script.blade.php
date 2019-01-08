@@ -132,12 +132,12 @@ $(document).ready(function() {
         var name = $(this).data('name');
         e.preventDefault();
         swal({
-            title: 'Are you sure you want to delete '+name+ '?',
+            title: 'Are you sure you want to delete certificate?',
             text: "You won't be able to revert this!",
             type: 'error',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
+            confirmButtonColor: '#63c2de',
+            cancelButtonColor: '#f86c6b',
             confirmButtonText: 'Yes, delete it!'
         })
         .then ((result) => {

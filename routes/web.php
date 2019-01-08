@@ -32,10 +32,10 @@ Route::post('/delete/{id}','CertificatesController@destroy');
 // Route::get('/admin/create','AdminController@create');
 // Route::post('admin/create','AdminController@store');
 
-Route::resource('admin','AdminController');
+/* Route::resource('admin','AdminController');
 Route::resource('permissions','PermissionController');
 Route::resource('roles','RoleController');
-
+ */
 
 Auth::routes();
 
