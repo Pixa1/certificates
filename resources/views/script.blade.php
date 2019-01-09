@@ -68,7 +68,7 @@ $(document).ready(function() {
     //Download Files
     $('#select_btn').click( function () {
         $('#overlay').show();
-        $('#loadingGIF').show();
+        $('#loader').show();
 
         var data=table.rows('.table-info').data();
         var newarray=[];       
@@ -113,7 +113,7 @@ $(document).ready(function() {
                 .then(function(content) {
                     saveAs(content, "certificates.zip");
                     $('#overlay').hide();
-                    $('#loadingGIF').hide();
+                    $('#loader').hide();
                 });
             }) 
             

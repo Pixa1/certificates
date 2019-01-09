@@ -87,4 +87,5 @@
 	</div>
 </div>
 <div id="overlay"></div>
+<div id="loader"></div>
 @endsection
