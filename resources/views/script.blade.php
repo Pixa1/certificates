@@ -67,6 +67,9 @@ $(document).ready(function() {
 
     //Download Files
     $('#select_btn').click( function () {
+        $('#overlay').show();
+        $('#loadingGIF').show();
+
         var data=table.rows('.table-info').data();
         var newarray=[];       
         for (var i=0; i < data.length ;i++){
@@ -76,15 +79,17 @@ $(document).ready(function() {
             // newarray.push(data[i][8]);
         }
         var urls = newarray;
-       
+
     //Download files as ZIP
     var zip = new JSZip();
         function request(url) {
             return new Promise(function(resolve) {
                 var httpRequest = new XMLHttpRequest();
+
                 httpRequest.open("GET", url);
                 httpRequest.onload = function() {
                     //var newurl = url.substr(url.indexOf("/")+1);
+
                     JSZipUtils.getBinaryContent(url,function (err, data) {
                     if(err) {
                         throw err; // or handle the error
@@ -107,9 +112,13 @@ $(document).ready(function() {
                 })
                 .then(function(content) {
                     saveAs(content, "certificates.zip");
+                    $('#overlay').hide();
+                    $('#loadingGIF').hide();
                 });
             }) 
-        
+            
+            
+    
     } ); 
 
     // Reset Form Button

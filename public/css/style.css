@@ -14167,3 +14167,6 @@ body {
   breakpoint-lg: 992px;
   breakpoint-xl: 1200px;
 }
+#overlay{position:absolute;height:100%;width:100%;}
+#overlay{background:black;opacity:.7;z-index:2;display:none;}
+#loadingGIF{position:absolute;top:40%;left:45%;z-index:3;display:none;}
