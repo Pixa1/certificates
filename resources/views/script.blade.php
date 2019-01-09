@@ -137,26 +137,26 @@ $(document).ready(function() {
 
 
     //delete
-    $('#table').on('click','.btn-danger', function(e){
-        var name = $(this).data('name');
-        e.preventDefault();
-        swal({
-            title: 'Are you sure you want to delete certificate?',
-            text: "You won't be able to revert this!",
-            type: 'error',
-            showCancelButton: true,
-            confirmButtonColor: '#63c2de',
-            cancelButtonColor: '#f86c6b',
-            confirmButtonText: 'Yes, delete it!'
-        })
-        .then ((result) => {
-            if (result.value) {
-                $(this).closest("form").submit();
-            }else{
-                result.dismiss === swal.DismissReason.cancel
-            }
+    $('#table').on('click', '.btn-danger', function (e) {
+    var _this = this;
 
-        });
+    var name = $(this).data('name');
+    e.preventDefault();
+    swal({
+        title: 'Are you sure you want to delete certificate?',
+        text: "You won't be able to revert this!",
+        type: 'error',
+        showCancelButton: true,
+        confirmButtonColor: '#63c2de',
+        cancelButtonColor: '#f86c6b',
+        confirmButtonText: 'Yes, delete it!'
+    }).then(function (result) {
+        if (result.value) {
+            $(_this).closest("form").submit();
+        } else {
+            result.dismiss === swal.DismissReason.cancel;
+        }
+    });
     });
 } );
 </script>
