@@ -13,7 +13,6 @@
 				<table id="table" class="table table-bordered table-sm table-striped" cellspacing="0" width="100%">
 					<thead class="thead-light">
 						<tr>
-							{{-- <th>Id</th> --}}
 							<th>First name</th>
 							<th>Last name</th>
 							<th>Vendor</th>
@@ -30,7 +29,6 @@
 					</thead>
 					@foreach($data as $item)
 					<tr>
-						{{-- <td>{{$item->id}}</td> --}}
 						<td>{{$item->name}}</td>
 						<td>{{$item->lastname}}</td>
 						<td>{{$item->vendor}}</td>
@@ -40,11 +38,7 @@
 						<td>{{$item->examid}}</td>
 						<td>{{ $item->dateofach}}</td>
 						<td><a href="{{($item->certpath)}}">Download</a> </td>
-						{{-- <td><a href="{{($item->certpath)}}">{{str_replace('/storage/', '', ($item->certpath))}}</a> </td> --}}
-						<!-- <td>{{$item->datevalid}}</td> -->
-						<!-- <td>{{$item->deprecated}}</td> -->
-						<!-- <td>{{$item->created_at}}</td> -->
-						<!-- <td>{{$item->updated_at}}</td> -->
+
 						@auth
 
 						<td>
@@ -61,7 +55,6 @@
 					@endforeach
 					<tfoot>
 					<tr>
-						{{-- <th>Id</th> --}}
 						<th>First name</th>
 						<th>Last name</th>
 						<th>Vendor</th>
