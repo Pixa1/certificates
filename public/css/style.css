@@ -14167,19 +14167,19 @@ body {
   breakpoint-lg: 992px;
   breakpoint-xl: 1200px;
 }
-#overlay{position:absolute;height:100%;width:100%;}
+#overlay{position:fixed;height:100%;width:100%;}
 #overlay{background:black;opacity:.7;z-index:2;display:none;}
-#loader{position:absolute;top:40%;left:45%;z-index:3;display:none;}
-#loader{  border: 16px solid #f3f3f3;
+#loader{position:absolute;top:50%;left:50%;z-index:3;display:none;}
+#loader{  content: " ";
+  width: 46px;
+  height: 46px;
+  margin: 1px;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
+  border: 5px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  -webkit-animation: spin 1.2s linear infinite; /* Safari */
+  animation: spin 1.2s linear infinite;
 }
-
-
 
 /* Safari */
 @-webkit-keyframes spin {

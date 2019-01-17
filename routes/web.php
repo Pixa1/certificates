@@ -11,10 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/','PagesController@index');
 
 Route::get('/create','CertificatesController@create');
@@ -24,6 +20,8 @@ Route::get('/edit/{id}','CertificatesController@edit');
 Route::post('/edit/{id}','CertificatesController@update');
 
 Route::post('/delete/{id}','CertificatesController@destroy');
+
+Route::get('datatables','DataTableController@anyData')->name('datatables.data');
 
 // Route::get('/admin','AdminController@index');
 // Route::get('/admin/edit/{id}','AdminController@edit');

@@ -1,11 +1,59 @@
 
-<script>
-$(document).ready(function() {
 
+<script>
+
+$(document).ready(function() {
+    
 	//Initialize Datatable
 	$('#select_btn').prop('disabled',true);
     $.fn.dataTable.moment( 'DD-MM-YYYY' );
-	//$('#table').DataTable();
+
+    
+    if(!"{{Auth::guest()}}"){
+	var table = $('#table').DataTable({
+        
+        processing: true,
+        serverSide: true,
+        ajax: '{!! route('datatables.data') !!}',
+        columns: [
+            { data: 'name', name: 'name' },
+            { data: 'lastname', name: 'lastname' },
+            { data: 'vendor', name: 'vendor' },
+            { data: 'shorttitle', name: 'shorttitle' },
+            { data: 'certname', name: 'certname' },
+            { data: 'certver', name: 'certver' },
+            { data: 'examid', name: 'examid' },
+            { data: 'dateofach', name: 'dateofach' },
+            { data: 'certpath', name: 'certpath' },
+            { data: 'action', name: 'action',searchable:false,orderable:false}
+            
+        ] 
+    });
+    }else{
+        var table = $('#table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{!! route('datatables.data') !!}',
+        columns: [
+            { data: 'name', name: 'name' },
+            { data: 'lastname', name: 'lastname' },
+            { data: 'vendor', name: 'vendor' },
+            { data: 'shorttitle', name: 'shorttitle' },
+            { data: 'certname', name: 'certname' },
+            { data: 'certver', name: 'certver' },
+            { data: 'examid', name: 'examid' },
+            { data: 'dateofach', name: 'dateofach' },
+            { data: 'certpath', name: 'certpath' },
+        ] 
+    });
+    }
+    // Setup - add a text input to each footer cell
+
+    $('#table tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" id="tsearch" class="form-control form-control-sm" placeholder="Search '+title+'" />' );
+    } );
+    //Select row
     $('#table tbody').on( 'click', 'tr', function () {
 	    $(this).toggleClass('table-info');
 	    //disable download button if nothing is selected
@@ -15,33 +63,6 @@ $(document).ready(function() {
 	    }else{$('#select_btn').prop('disabled',true);
 	    };
     } );
-
-	var table = $('#table').DataTable(
-/*         {
-            columnDefs: [
-            {
-                targets: 7, 
-                "render": function ( data, type, row ) {
-                    if (data[7] == null){
-                        return 'Date no set';
-                    }   else {
-                    return moment(data).format('LL'); 
-                    //return data;
-                    }             
-                    // return data +' ('+ row[3]+')';
-                    }
-                //render: $.fn.dataTable.render.moment( 'DD-MM-YYYY' ) 
-            }
-            ]
-        } */
-    );
-    // Setup - add a text input to each footer cell
-
-    $('#table tfoot th').each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text" id="tsearch" class="form-control form-control-sm" placeholder="Search '+title+'" />' );
-    } );
-
     // Apply the search
      table.columns().every( function () {
         var that = this;
@@ -73,10 +94,9 @@ $(document).ready(function() {
         var data=table.rows('.table-info').data();
         var newarray=[];       
         for (var i=0; i < data.length ;i++){
-        	var newurl = data[i][8];
+        	var newurl = data[i]['certpath'];
         	newurl = newurl.substring(newurl.indexOf("/") + 1, newurl.indexOf(">") -1);
             newarray.push(newurl);
-            // newarray.push(data[i][8]);
         }
         var urls = newarray;
 
@@ -88,8 +108,6 @@ $(document).ready(function() {
 
                 httpRequest.open("GET", url);
                 httpRequest.onload = function() {
-                    //var newurl = url.substr(url.indexOf("/")+1);
-
                     JSZipUtils.getBinaryContent(url,function (err, data) {
                     if(err) {
                         throw err; // or handle the error

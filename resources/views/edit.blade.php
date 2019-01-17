@@ -42,7 +42,7 @@
                         <label for="Short Title" class="col-sm-3 col-form-label">{{ __('Short Title') }}</label>
         
                         <div class="col-sm-6">
-                            <input id="shorttitle" type="text" class="form-control{{ $errors->has('shorttitle') ? ' is-invalid' : '' }}" name="shorttitle" value="{{ $id->shorttitle }}" required autofocus>
+                            <input id="shorttitle" type="text" class="form-control{{ $errors->has('shorttitle') ? ' is-invalid' : '' }}" name="shorttitle" value="{{ $id->shorttitle }}" autofocus>
         
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                         <label for="Certification" class="col-sm-3 col-form-label">{{ __('Certification') }}</label>
         
                         <div class="col-sm-6">
-                            <input id="certname" type="text" class="form-control{{ $errors->has('certname') ? ' is-invalid' : '' }}" name="certname" value="{{ $id->certname }}" required autofocus>
+                            <input id="certname" type="text" class="form-control{{ $errors->has('certname') ? ' is-invalid' : '' }}" name="certname" value="{{ $id->certname }}" autofocus>
         
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <label for="Certification/Version" class="col-sm-3 col-form-label">{{ __('Certification/Vesrion') }}</label>
         
                         <div class="col-sm-6">
-                            <input id="certver" type="text" class="form-control{{ $errors->has('certver') ? ' is-invalid' : '' }}" name="certver" value="{{ $id->certver }}" required autofocus>
+                            <input id="certver" type="text" class="form-control{{ $errors->has('certver') ? ' is-invalid' : '' }}" name="certver" value="{{ $id->certver }}" autofocus>
         
                         </div>
                     </div>    

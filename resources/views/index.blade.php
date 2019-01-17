@@ -1,7 +1,6 @@
 @extends('layouts.master')
 @section('title', 'S&T Certifikati')
 @section('content')
-@include('script')
 @include('flash-message')
 <div class="col-lg-12">
 	<div class="card">
@@ -23,51 +22,25 @@
 							<th>Achieved On</th>
 							<th>Certificate</th>
 							@auth
-							<th>Admin</th>
+							<th>Action</th>
 							@endauth
 						</tr>
 					</thead>
-					@foreach($data as $item)
-					<tr>
-						<td>{{$item->name}}</td>
-						<td>{{$item->lastname}}</td>
-						<td>{{$item->vendor}}</td>
-						<td>{{$item->shorttitle}}</td>
-						<td>{{$item->certname}}</td>
-						<td>{{$item->certver}}</td>
-						<td>{{$item->examid}}</td>
-						<td>{{ $item->dateofach}}</td>
-						<td><a href="{{($item->certpath)}}">Download</a> </td>
-
-						@auth
-
-						<td>
-							<div class="btn-group btn-group-sm border-1">
-								<a href="{!!'/edit/'. $item->id !!}" class="btn btn-info"><i class="far fa-edit"></i> Edit</a>
-								<form method="POST" action="{!! action('CertificatesController@destroy', $item->id) !!}">
-									@csrf
-									<button class="btn btn-sm btn-danger" id="delete_btn" data-name="{{$item->certname}}" type="submit" ><i class="fas fa-trash-alt"></i> Delete</button>
-								</form>
-							</div>
-						</td>
-						@endauth
-					</tr>
-					@endforeach
 					<tfoot>
-					<tr>
-						<th>First name</th>
-						<th>Last name</th>
-						<th>Vendor</th>
-						<th>ShortTitle</th>
-						<th>Certificate Name</th>
-						<th>Certification/Version</th>  
-						<th>Exam ID</th>
-						<th>Achieved On</th>
-						<th>Certificate</th>
-						@auth
-						<th>Admin</th>
-						@endauth
-					</tr>
+						<tr>
+							<th>First name</th>
+							<th>Last name</th>
+							<th>Vendor</th>
+							<th>ShortTitle</th>
+							<th>Certificate Name</th>
+							<th>Certification/Version</th>  
+							<th>Exam ID</th>
+							<th>Achieved On</th>
+							<th>Certificate</th>
+							@auth
+							<th>Action</th>
+							@endauth
+						</tr>
 					</tfoot>
 				</table>
 			</div>
@@ -81,4 +54,5 @@
 </div>
 <div id="overlay"></div>
 <div id="loader"></div>
+@include('script')
 @endsection
