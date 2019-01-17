@@ -86,7 +86,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/storage/MCP_Cert_Paths_01_01_18.pdf">
-                  <i class="nav-icon fas fa-bezier-curve"></i> Microsoft Certification Path</a>
+                  <i class="nav-icon fas fa-bezier-curve"></i> MS Certification Path</a>
             </li>
             
           </ul>
