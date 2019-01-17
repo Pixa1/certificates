@@ -114,6 +114,9 @@
             <a href="http://www.snt.hr">Certifikati</a>
             <span>© 2019 S&T Hrvatska.</span>
         </div>
+        <div class="ml-auto">
+            <span>v 2.0</span>
+        </div>
 
     </footer>
     <script src="/js/coreui.min.js"></script>
