@@ -18,17 +18,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.min.css">
- 
+
     <!-- Main styles for this application-->
     <link href="/css/style.css" rel="stylesheet">
-  
+
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/1.10.19/dataRender/datetime.js"></script>
 
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>    
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.min.js" type="text/javascript" charset="utf-8" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.js"></script>
@@ -64,7 +64,7 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf
             </form>
-              
+
           </div>
         </li>
       </ul>
@@ -88,7 +88,10 @@
                 <a class="nav-link" href="/storage/MCP_Cert_Paths_01_01_18.pdf">
                   <i class="nav-icon fas fa-bezier-curve"></i> MS Certification Path</a>
             </li>
-            
+            <li class="nav-item">
+                <a class="nav-link" href="/storage/Microsoft role-based certification roadmap POSTER (March 2019).pdf">
+                  <i class="nav-icon fas fa-bezier-curve"></i> MS Role based certification</a>
+            </li>
           </ul>
 
         </nav>
