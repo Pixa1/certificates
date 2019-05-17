@@ -85,7 +85,7 @@
                 <i class="nav-icon far fa-clipboard"></i> Dodaj novi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/storage/MCP_Cert_Paths_01_01_18.pdf">
+                <a class="nav-link" href="/storage/MCP Cert Paths - 2-8-19.pdf">
                   <i class="nav-icon fas fa-bezier-curve"></i> MS Certification Path</a>
             </li>
             <li class="nav-item">
